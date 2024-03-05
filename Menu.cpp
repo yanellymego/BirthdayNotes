@@ -46,6 +46,8 @@ void Menu::Option2(){
     int day;
     char response;
     int year;
+    string gifts;
+    string party;
 
     //Prompts user for all the neccesary information
     cout << "\nAdding a birthday...\n" << endl;
@@ -64,7 +66,6 @@ void Menu::Option2(){
     cout << "Would you like to enter the birth year? (y/n): ";
     cin >> response;
     if (response == 'y'){
-        //Error occurs 
         cout << "Enter the birth year: ";
         cin >> year;
     } 
@@ -72,17 +73,15 @@ void Menu::Option2(){
     cout << "\nWould you like to enter your gift brainstorming ideas? (y/n): ";
     cin >> response;
     if (response == 'y'){
-        //Error occurs 
         cout << "Enter the gift brainstorming (seperated by commas): ";
-        cin >> year;
+        cin >> gifts;
     } 
 
     cout << "\nWould you like to enter any party ideas or information? (y/n): ";
     cin >> response;
     if (response == 'y'){
-        //Error occurs 
         cout << "Enter the party ideas or information (seperated by commas): ";
-        cin >> year;
+        cin >> party;
     } 
     cout << "\n" << endl;
 }
