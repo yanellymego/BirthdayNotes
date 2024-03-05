@@ -1,0 +1,20 @@
+name: BirthdayNotes
+
+on: [push, pull-request]
+
+jobs:
+  build:
+    name: BirthdayNotes
+    runs-on: ubunto-latest
+
+    steps:
+
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+        fetch-depth: 0
+
+      - name: Compiles Test
+        run: |
+        g++ *.cpp -o BirthdayNotes
+        ./BirthdayNotes
