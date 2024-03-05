@@ -14,9 +14,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install g++
-        run: sudo apt-get install g++
-
       - name: Compile C++ Code
         run: g++ -o BirthdayNotes *.cpp
 
