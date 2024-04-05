@@ -1,20 +1,39 @@
 #include "Menu.h"
 
-Menu::Menu(){
+Menu::Menu(const string& defaultInput) : data(defaultInput) {
     int user_input;
 
-    cout << "Main menu:" << endl;
-    cout << "\t(1) View upcoming birthdays" << endl;
-    cout << "\t(2) Add a birthday" << endl;
-    cout << "\t(3) See full list of birthdays" << endl;
-    cout << "\t(4) Exit program" << endl;
- 
+    //for unit testing, parsing through string
+    if (defaultInput != "") {
+        istringstream iss(defaultInput);
+        string token;
+
+        while(getline(iss, token, ',')){
+            test_string.push_back(token);
+        }
+    }
+
     //Get's user input for menu options
     //Prompts user to select a number when number is out of scope and when finishing the task from the opetion chosen
     //Only stops prompting when user selects option 4 (exiting the program)
     do{
+        cout << "Main menu:" << endl;
+        cout << "\t(1) View upcoming birthdays" << endl;
+        cout << "\t(2) Add a birthday" << endl;
+        cout << "\t(3) See full list of birthdays" << endl;
+        cout << "\t(4) Exit program" << endl;
         cout << "Enter the option you'd like to select: " << endl;
-        cin >> user_input;
+
+        //if statement for unit testing
+        if (defaultInput != "") {
+            user_input = stoi(test_string.front());
+            test_string.pop_front();        
+            cout << user_input << endl;
+        } else {
+            //else gets user input (non-unit testing)
+            cin >> user_input;
+        }
+
 
         switch(user_input)
         {
@@ -51,37 +70,122 @@ void Menu::Option2(){
 
     //Prompts user for all the neccesary information
     cout << "\nAdding a birthday...\n" << endl;
+
     cout << "Enter the name of the person you'd like to add: ";
-    cin >> name;
+    //if statement for unit testing
+    if (!test_string.empty()) {
+        name = test_string.front();
+        test_string.pop_front();
+        cout << name << endl;
+    } else {
+        //else gets user input (non-unit testing)
+        cin >> name;
+    }
+
+    
     cout << "Enter the birthday month (as a number): ";
-    cin >> month;
+    //if statement for unit testing
+    if (!test_string.empty()) {
+        month = stoi(test_string.front());
+        test_string.pop_front();
+        cout << month << endl;
+
+    } else {
+        //else gets user input (non-unit testing)
+        cin >> month;
+    }
+
     cout << "Enter the birthday day: ";
-    cin >> day;
+    //if statement for unit testing
+    if (!test_string.empty()) {
+        day = stoi(test_string.front());
+        test_string.pop_front();
+        cout << day << endl;
+    } else {
+        //else gets user input (non-unit testing)
+        cin >> day;
+    }
 
     //Adds this information to an array that contains all of the people and their birthdays
     all_birthdays.push_back(new Birthday(name, day, month));
 
+
     //Prompts for optional information
     cout << "\nThe following information is optional." << endl;
     cout << "Would you like to enter the birth year? (y/n): ";
-    cin >> response;
+
+   //if statement for unit testing
+    if (!test_string.empty()) {
+        response = (test_string.front()).at(0);
+        test_string.pop_front();
+        cout << response << endl;
+
+    } else {
+        //else gets user input (non-unit testing)
+        cin >> response;
+    }
+
+
     if (response == 'y'){
         cout << "Enter the birth year: ";
-        cin >> year;
+
+        //if statement for unit testing
+        if (!test_string.empty()) {
+            year = stoi(test_string.front());
+            test_string.pop_front();
+        } else {
+            //else gets user input (non-unit testing)
+            cin >> year;
+        }
     } 
 
     cout << "\nWould you like to enter your gift brainstorming ideas? (y/n): ";
-    cin >> response;
+    //if statement for unit testing
+    if (!test_string.empty()) {
+        response = (test_string.front()).at(0);
+        test_string.pop_front();
+        cout << response << endl;
+
+    } else {
+        //else gets user input (non-unit testing)
+        cin >> response;
+    }
+
     if (response == 'y'){
         cout << "Enter the gift brainstorming (seperated by commas): ";
-        cin >> gifts;
+
+        //if statement for unit testing
+        if (!test_string.empty()) {
+            gifts = test_string.front();
+            test_string.pop_front();
+        } else {
+            //else gets user input (non-unit testing)
+            cin >> gifts;
+        }
     } 
 
     cout << "\nWould you like to enter any party ideas or information? (y/n): ";
-    cin >> response;
+    //if statement for unit testing
+    if (!test_string.empty()) {
+        response = (test_string.front()).at(0);
+        test_string.pop_front();
+        cout << response << endl;
+    } else {
+        //else gets user input (non-unit testing)
+        cin >> response;
+    }
+
     if (response == 'y'){
         cout << "Enter the party ideas or information (seperated by commas): ";
-        cin >> party;
+
+        //if statement for unit testing
+        if (!test_string.empty()) {
+            gifts = test_string.front();
+            test_string.pop_front();
+        } else {
+            //else gets user input (non-unit testing)
+            cin >> party;
+        }
     } 
     cout << "\n" << endl;
 }
