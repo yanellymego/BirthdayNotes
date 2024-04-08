@@ -4,6 +4,8 @@
 #include <iostream>
 #include <list>
 #include <sstream>
+#include <string>
+#include <limits>
 #include "Birthday.h"
 using namespace std;
 
@@ -16,7 +18,7 @@ class Menu {
         void Option3();
     private:
         list<Birthday*> all_birthdays;
-        list<string> test_string; //for unit testing
+        list<string> test_string; // for unit testing
         string data;
 };
 
