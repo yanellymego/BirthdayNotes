@@ -8,7 +8,7 @@ Menu::Menu(const string& defaultInput) : data(defaultInput) {
         istringstream iss(defaultInput);
         string token;
 
-        while(getline(iss, token, ',')){
+        while(getline(iss, token, ';')){
             test_string.push_back(token);
         }
     }
@@ -79,7 +79,8 @@ void Menu::Option2(){
         cout << name << endl;
     } else {
         //else gets user input (non-unit testing)
-        cin >> name;
+        cin.ignore (numeric_limits<streamsize>::max(), '\n');
+        getline(cin, name);
     }
 
     
@@ -160,7 +161,8 @@ void Menu::Option2(){
             test_string.pop_front();
         } else {
             //else gets user input (non-unit testing)
-            cin >> gifts;
+            cin.ignore (numeric_limits<streamsize>::max(), '\n');
+            getline(cin, gifts);
         }
     } 
 
@@ -184,7 +186,8 @@ void Menu::Option2(){
             test_string.pop_front();
         } else {
             //else gets user input (non-unit testing)
-            cin >> party;
+            cin.ignore (numeric_limits<streamsize>::max(), '\n');
+            getline(cin, party);
         }
     } 
     cout << "\n" << endl;

@@ -9,7 +9,11 @@ void unit_test_exit(){
     // delete main_menu;
 
     //Unit test for user entering program, adding a new birthday with no additional info, and leaving
-    Menu *main_menu = new Menu("2,Yanelly,3,11,n,n,n,4");
+    // Menu *main_menu = new Menu("2;Yanelly;3;11;n;n;n;4");
+    // delete main_menu;
+
+    //Unit test for Issue #2: User can enter more than one word when prompted 
+    Menu *main_menu = new Menu("2;Jane Doe;4;7;n;y;birthday card,Target gift card,flowers;n;4");
     delete main_menu;
 }
 
