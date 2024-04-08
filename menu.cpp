@@ -1,6 +1,6 @@
 #include "Menu.h"
 
-Menu::Menu(const string defaultInput) : data(defaultInput) 
+Menu::Menu(const string &defaultInput) : data(defaultInput) 
 {
   int user_input;
 
