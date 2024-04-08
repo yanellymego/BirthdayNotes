@@ -4,6 +4,8 @@
 #include <iostream>
 #include <list>
 #include <sstream>
+#include <string>
+#include <limits>
 #include "Birthday.h"
 using namespace std;
 
