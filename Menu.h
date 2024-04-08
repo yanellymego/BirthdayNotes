@@ -11,7 +11,7 @@ using namespace std;
 
 class Menu {
     public:
-        Menu(const string& defaultInput = "");
+        Menu(const string defaultInput = "");
         ~Menu();
         void Option1();
         void Option2();
