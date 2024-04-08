@@ -17,8 +17,12 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Lint Code Base
-        uses: github/super-linter@v4
-        env:
-          VALIDATE_ALL_CODEBASE: true
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Setup Clang
+        uses: actions/setup-clang@v1
+        with:
+          llvm-version: '12'
+
+      - name: Run Clang-Tidy
+        run: |
+          clang-tidy --version
+          clang-tidy src/*.cpp -checks=* -- -Iinclude
