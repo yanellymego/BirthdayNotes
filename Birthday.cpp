@@ -7,7 +7,7 @@ Birthday::Birthday(string nickname, int day, int month) {
   birth_month = month;
 
   // Optional, defaults as null
-  birth_year = NULL;
+  birth_year = -1;
   gift_brainstorm = "";
   party_notes = "";
 }
