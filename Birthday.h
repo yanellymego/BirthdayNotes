@@ -7,10 +7,15 @@
 #include <ctime>
 #include <iostream>
 #include <string>
-using namespace std;
+
+// Using-declarations
+using std::string;
+using std::cout;
+using std::cin;
+using std::endl;
 
 class Birthday {
-public:
+  public:
   Birthday();
   Birthday(string nickname, int day, int month);
   void printIndvBirthday();
@@ -20,7 +25,7 @@ public:
 
   ~Birthday();
 
-private:
+  private:
   string name;
   string gift_brainstorm;
   string party_notes;
@@ -30,4 +35,4 @@ private:
   int birth_year;
 };
 
-#endif //  BIRTHDAY_H_
+#endif  // BIRTHDAY_H_
