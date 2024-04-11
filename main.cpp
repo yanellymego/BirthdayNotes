@@ -1,3 +1,6 @@
+// NOLINT(legal/copyright)
+// NOLINT(build/namespaces)
+
 #include "Menu.h"
 #include <iostream>
 #include <string>

@@ -1,5 +1,9 @@
-#ifndef MENU_H
-#define MENU_H
+// NOLINT(legal/copyright)
+// NOLINT(build/namespaces)
+
+
+#ifndef MENU_H_
+#define MENU_H_
 
 #include "Birthday.h"
 #include <iostream>
@@ -10,17 +14,17 @@
 using namespace std;
 
 class Menu {
-public:
-  Menu(const string &defaultInput = "");
-  ~Menu();
-  void Option1();
-  void Option2();
-  void Option3();
+  public:
+    explicit Menu(const string &defaultInput = "");
+    ~Menu();
+    void Option1();
+    void Option2();
+    void Option3();
 
-private:
-  list<Birthday *> all_birthdays;
-  list<string> test_string; // for unit testing
-  string data;
+  private:
+    list<Birthday *> all_birthdays;
+    list<string> test_string;  // for unit testing
+    string data;
 };
 
-#endif
+#endif  // MENU_H_

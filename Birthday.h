@@ -1,5 +1,8 @@
-#ifndef BIRTHDAY_H
-#define BIRTHDAY_H
+// NOLINT(legal/copyright)
+// NOLINT(build/namespaces)
+
+#ifndef BIRTHDAY_H_
+#define BIRTHDAY_H_
 
 #include <ctime>
 #include <iostream>
@@ -27,4 +30,4 @@ private:
   int birth_year;
 };
 
-#endif
+#endif //  BIRTHDAY_H_
