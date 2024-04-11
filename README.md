@@ -5,3 +5,10 @@ This program allows users to be be able to enter their family or friend's birthd
 Compiling Code:  
 g++ *.cpp -o BirthdayNotes  
 ./BirthdayNotes
+
+For unit tests:
+Add unit test in unit_test_exit() in main.cpp
+
+When running, add -test flag:
+g++ *.cpp -o BirthdayNotes  
+./BirthdayNotes -test
