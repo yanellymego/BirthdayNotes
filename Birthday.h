@@ -4,7 +4,7 @@
 #ifndef BIRTHDAY_H_
 #define BIRTHDAY_H_
 
-#include <ctime>
+// #include <ctime>
 #include <iostream>
 #include <string>
 
