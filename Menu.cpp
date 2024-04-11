@@ -1,7 +1,6 @@
 #include "Menu.h"
 
-Menu::Menu(const string &defaultInput) : data(defaultInput) 
-{
+Menu::Menu(const string &defaultInput) : data(defaultInput) {
   int user_input;
 
   // for unit testing, parsing through string
@@ -9,8 +8,7 @@ Menu::Menu(const string &defaultInput) : data(defaultInput)
     istringstream iss(defaultInput);
     string token;
 
-    while (getline(iss, token, ';')) 
-    {
+    while (getline(iss, token, ';')) {
       test_string.push_back(token);
     }
   }
@@ -19,8 +17,7 @@ Menu::Menu(const string &defaultInput) : data(defaultInput)
   // Prompts user to select a number when number is out of scope and when
   // finishing the task from the opetion chosen Only stops prompting when user
   // selects option 4 (exiting the program)
-  do 
-  {
+  do {
     cout << "Main menu:" << endl;
     cout << "\t(1) View upcoming birthdays" << endl;
     cout << "\t(2) Add a birthday" << endl;
@@ -33,14 +30,12 @@ Menu::Menu(const string &defaultInput) : data(defaultInput)
       user_input = stoi(test_string.front());
       test_string.pop_front();
       cout << user_input << endl;
-    } 
-    else {
+    } else {
       // else gets user input (non-unit testing)
       cin >> user_input;
     }
 
-    switch (user_input) 
-    {
+    switch (user_input) {
     case 1:
       cout << "Viewing upcoming birthdays for this month...\n" << endl;
       // Option1() is not set up
@@ -58,12 +53,10 @@ Menu::Menu(const string &defaultInput) : data(defaultInput)
     default:
       cout << "\nInvalid: Your option number was not in the menu" << endl;
     }
-  } 
-  while (user_input != 4);
+  } while (user_input != 4);
 }
 
-void Menu::Option2() 
-{
+void Menu::Option2() {
   string name;
   int month;
   int day;
@@ -81,8 +74,7 @@ void Menu::Option2()
     name = test_string.front();
     test_string.pop_front();
     cout << name << endl;
-  } 
-  else {
+  } else {
     // else gets user input (non-unit testing)
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
     getline(cin, name);
@@ -95,8 +87,7 @@ void Menu::Option2()
     test_string.pop_front();
     cout << month << endl;
 
-  } 
-  else {
+  } else {
     // else gets user input (non-unit testing)
     cin >> month;
   }
@@ -107,8 +98,7 @@ void Menu::Option2()
     day = stoi(test_string.front());
     test_string.pop_front();
     cout << day << endl;
-  } 
-  else {
+  } else {
     // else gets user input (non-unit testing)
     cin >> day;
   }
@@ -127,8 +117,7 @@ void Menu::Option2()
     test_string.pop_front();
     cout << response << endl;
 
-  } 
-  else {
+  } else {
     // else gets user input (non-unit testing)
     cin >> response;
   }
@@ -140,8 +129,7 @@ void Menu::Option2()
     if (!test_string.empty()) {
       year = stoi(test_string.front());
       test_string.pop_front();
-    } 
-    else {
+    } else {
       // else gets user input (non-unit testing)
       cin >> year;
     }
@@ -154,8 +142,7 @@ void Menu::Option2()
     test_string.pop_front();
     cout << response << endl;
 
-  } 
-  else {
+  } else {
     // else gets user input (non-unit testing)
     cin >> response;
   }
@@ -167,8 +154,7 @@ void Menu::Option2()
     if (!test_string.empty()) {
       gifts = test_string.front();
       test_string.pop_front();
-    } 
-    else {
+    } else {
       // else gets user input (non-unit testing)
       cin.ignore(numeric_limits<streamsize>::max(), '\n');
       getline(cin, gifts);
@@ -181,8 +167,7 @@ void Menu::Option2()
     response = (test_string.front()).at(0);
     test_string.pop_front();
     cout << response << endl;
-  } 
-  else {
+  } else {
     // else gets user input (non-unit testing)
     cin >> response;
   }
@@ -194,8 +179,7 @@ void Menu::Option2()
     if (!test_string.empty()) {
       gifts = test_string.front();
       test_string.pop_front();
-    } 
-    else {
+    } else {
       // else gets user input (non-unit testing)
       cin.ignore(numeric_limits<streamsize>::max(), '\n');
       getline(cin, party);
