@@ -8,19 +8,16 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: Setup Clang
-        uses: egor-tensin/setup-clang@v1
-        with:
-          version: latest
-          platform: x64
-
-      - name: Lint Code Base
-        uses: github/super-linter@v4
+      - uses: actions/checkout@v4
+      - uses: cpp-linter/cpp-linter-action@v2
+        id: linter
         env:
-          VALIDATE_ALL_CODEBASE: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          style: 'file'  # Use .clang-format config file
+          tidy-checks: '' # Use .clang-tidy config file
+          # only 'update' a single comment in a pull request's thread.
+          thread-comments: ${{ github.event_name == 'pull_request' && 'update' }}
+      - name: Fail fast?!
+        if: steps.linter.outputs.checks-failed > 0
+        run: exit 1
