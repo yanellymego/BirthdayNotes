@@ -4,7 +4,11 @@
 #include "Menu.h"
 #include <iostream>
 #include <string>
-using namespace std;
+
+// Using-declarations
+using std::string;
+using std::cout;
+using std::endl;
 
 void unit_test_exit() {
   // Unit test for user entering program, selecting option 4, and exiting

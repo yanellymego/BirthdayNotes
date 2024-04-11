@@ -15,6 +15,8 @@ using std::cin;
 using std::endl;
 
 class Birthday {
+  // NOLINTNEXTLINE(whitespace/indent)
+
   public:
     Birthday();
     Birthday(string nickname, int day, int month);
@@ -34,5 +36,6 @@ class Birthday {
     int birth_month;
     int birth_year;
 };
+// NOLINT(whitespace/ending_newline)
 
 #endif  // BIRTHDAY_H_
