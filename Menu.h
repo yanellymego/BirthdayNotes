@@ -9,6 +9,7 @@
 #include <string>
 using namespace std;
 
+
 class Menu {
   public:
     explicit Menu(const string &defaultInput = "");
