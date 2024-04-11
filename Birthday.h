@@ -1,22 +1,12 @@
-// NOLINT(legal/copyright)
-// NOLINT(build/namespaces)
-
 #ifndef BIRTHDAY_H_
 #define BIRTHDAY_H_
 
-// #include <ctime>
+#include <ctime>
 #include <iostream>
 #include <string>
-
-// Using-declarations
-using std::string;
-using std::cout;
-using std::cin;
-using std::endl;
+using namespace std;
 
 class Birthday {
-  // NOLINTNEXTLINE(whitespace/indent)
-
   public:
     Birthday();
     Birthday(string nickname, int day, int month);
@@ -36,6 +26,5 @@ class Birthday {
     int birth_month;
     int birth_year;
 };
-// NOLINT(whitespace/ending_newline)
 
 #endif  // BIRTHDAY_H_
