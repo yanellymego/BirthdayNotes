@@ -22,16 +22,16 @@ using std::stringstream;
 
 class Menu {
   public:
-  explicit Menu(const string &defaultInput = "");
-  ~Menu();
-  void Option1();
-  void Option2();
-  void Option3();
+    explicit Menu(const string &defaultInput = "");
+    ~Menu();
+    void Option1();
+    void Option2();
+    void Option3();
 
   private:
-  list<Birthday *> all_birthdays;
-  list<string> test_string;  // for unit testing
-  string data;
+    list<Birthday *> all_birthdays;
+    list<string> test_string;  // for unit testing
+    string data;
 };
 
 #endif  // MENU_H_
