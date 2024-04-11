@@ -1,4 +1,3 @@
-// NOLINT(legal/copyright)
 #include "Birthday.h"
 
 // Creating a person after receiving user input

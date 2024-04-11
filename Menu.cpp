@@ -1,5 +1,3 @@
-// NOLINT(legal/copyright)
-
 #include "Menu.h"
 
 Menu::Menu(const string &defaultInput) : data(defaultInput) {

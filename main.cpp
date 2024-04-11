@@ -1,14 +1,7 @@
-// NOLINT(legal/copyright)
-// NOLINT(build/namespaces)
-
 #include "Menu.h"
 #include <iostream>
 #include <string>
-
-// Using-declarations
-using std::string;
-using std::cout;
-using std::endl;
+using namespace std;
 
 void unit_test_exit() {
   // Unit test for user entering program, selecting option 4, and exiting
