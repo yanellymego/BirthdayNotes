@@ -1,7 +1,3 @@
-// NOLINT(legal/copyright)
-// NOLINT(build/namespaces)
-
-
 #ifndef MENU_H_
 #define MENU_H_
 
@@ -11,18 +7,8 @@
 #include <list>
 #include <sstream>
 #include <string>
+using namespace std;
 
-// Using-declarations 
-using std::string;
-using std::cout;
-using std::cin;
-using std::endl;
-using std::istringstream;
-using std::list;
-using std::max;
-using std::numeric_limits;
-using std::streamsize;
-using std::stringstream;
 
 class Menu {
   public:

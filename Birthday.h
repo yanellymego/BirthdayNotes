@@ -1,5 +1,5 @@
-#ifndef BIRTHDAY_H
-#define BIRTHDAY_H
+#ifndef BIRTHDAY_H_
+#define BIRTHDAY_H_
 
 #include <ctime>
 #include <iostream>
@@ -7,24 +7,24 @@
 using namespace std;
 
 class Birthday {
-public:
-  Birthday();
-  Birthday(string nickname, int day, int month);
-  void printIndvBirthday();
-  void setYear(int year);
-  void setGiftBrainstorm(string note);
-  void setPartyNotes(string note);
+  public:
+    Birthday();
+    Birthday(string nickname, int day, int month);
+    void printIndvBirthday();
+    void setYear(int year);
+    void setGiftBrainstorm(string note);
+    void setPartyNotes(string note);
 
-  ~Birthday();
+    ~Birthday();
 
-private:
-  string name;
-  string gift_brainstorm;
-  string party_notes;
+  private:
+    string name;
+    string gift_brainstorm;
+    string party_notes;
 
-  int birth_day;
-  int birth_month;
-  int birth_year;
+    int birth_day;
+    int birth_month;
+    int birth_year;
 };
 
-#endif
+#endif  // BIRTHDAY_H_
