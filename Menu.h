@@ -17,7 +17,11 @@ using std::string;
 using std::cout;
 using std::cin;
 using std::endl;
+using std::istringstream;
 using std::list;
+using std::max;
+using std::numeric_limits;
+using std::streamsize;
 using std::stringstream;
 
 class Menu {
