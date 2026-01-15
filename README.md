@@ -13,6 +13,7 @@ When running the program, users can:
 
 ## How to Compile and Run
 g++ *.cpp -o BirthdayNotes
+
 ./BirthdayNotes
 
 ## For Unit Testing
@@ -20,4 +21,5 @@ Add unit test in unit_test_exit() in main.cpp
 
 When running, add -test flag:
 g++ *.cpp -o BirthdayNotes  
+
 ./BirthdayNotes -test
